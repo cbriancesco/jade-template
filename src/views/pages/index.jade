@@ -1,0 +1,16 @@
+//- -------------- Home Page ---------------- -//
+//- ----------------------------------------- -//
+
+extends ../layout/layout
+include ../mixins/buttons
+
+
+block append head
+    link(href='css/home.css', rel='stylesheet', type='text/css')
+
+
+block content
+
+    h2 hello world!
+    
+    mixin insertSampleButton('Click Me', 'http://www.google.com', '_blank')
