@@ -6,5 +6,7 @@ gulp.task('watch', ['setWatch', 'browser-sync'], function() {
 	gulp.watch('./src/images/**', ['imagemin']);
 	gulp.watch('./src/fonts/**', ['fonts']);
 	gulp.watch('./src/js/*.js', ['scripts']);
-	gulp.watch('./src/js/thirdparty/**', ['thirdparty']);
+    gulp.watch('./src/data/**', ['data']);
+	gulp.watch('./src/js/thirdparty/**', ['thirdpartyJs']);
+    gulp.watch('./src/styles/thirdparty/**', ['thirdpartyCss']);
 });
