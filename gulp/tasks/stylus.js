@@ -4,8 +4,14 @@ var gulp = require('gulp'),
 // Get one .styl file and render 
 gulp.task('stylus', function () {
 	gulp.src('./src/styles/pages/*.styl')
+    .pipe(stylus())
+    .pipe(gulp.dest('./build/css/'));
+});
+
+gulp.task('stylus-min', function () {
+    gulp.src('./src/styles/pages/*.styl')
     .pipe(stylus({
-    	compress: true
+        compress: true
     }))
     .pipe(gulp.dest('./build/css/'));
 });
