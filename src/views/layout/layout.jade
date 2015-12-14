@@ -1,5 +1,6 @@
 //- -------------- Layout ---------------- -//
 //- -------------------------------------- -//
+include ../mixins/utilities
 
 doctype html
 html
@@ -11,12 +12,12 @@ html
 
     body(class=pageClass || '')
     
-    include main-header
+    include ../modules/main-header
 
     block content
 
 
-    include main-footer
+    include ../modules/main-footer
 
     block footer-scripts
         script(src="js/thirdparty/jquery-1.11.3.min.js")
