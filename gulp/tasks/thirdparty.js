@@ -1,14 +1,15 @@
 var gulp = require('gulp'),
-	changed = require('gulp-changed');
+	changed = require('gulp-changed'),
+    config = require('../../config.json');
 
 gulp.task('thirdpartyJs', function() {
-	return gulp.src('./src/js/thirdparty/**/*')
-	.pipe(changed('./build/js/thirdparty/'))
-	.pipe(gulp.dest('./build/js/thirdparty/'));
+	return gulp.src(config.paths.dev.js.thirdparty + '**/*')
+	.pipe(changed(config.paths.dev.js.thirdparty))
+	.pipe(gulp.dest(config.paths.prod.js.thirdparty));
 });
 
 gulp.task('thirdpartyCss', function() {
-    return gulp.src('./src/styles/thirdparty/**/*')
-    .pipe(changed('./build/styles/thirdparty/'))
-    .pipe(gulp.dest('./build/css/thirdparty/'));
+    return gulp.src(config.paths.dev.css.thirdparty + '**/*')
+    .pipe(changed(config.paths.prod.css.thirdparty))
+    .pipe(gulp.dest(config.paths.prod.css.thirdparty));
 });

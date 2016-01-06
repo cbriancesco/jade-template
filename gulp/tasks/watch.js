@@ -1,12 +1,13 @@
-var gulp = require('gulp');
+var gulp = require('gulp'),
+    config = require('../../config.json');
 
 gulp.task('watch', ['setWatch', 'browser-sync'], function() {
-	gulp.watch('./src/styles/**/*.styl', ['stylus']);
-	gulp.watch('./src/views/**/*.jade', ['jade']);
-	gulp.watch('./src/images/**', ['imagemin']);
-	gulp.watch('./src/fonts/**', ['fonts']);
-	gulp.watch('./src/js/*.js', ['scripts']);
-    gulp.watch('./src/data/**', ['data']);
-	gulp.watch('./src/js/thirdparty/**', ['thirdpartyJs']);
-    gulp.watch('./src/styles/thirdparty/**', ['thirdpartyCss']);
+	gulp.watch(config.paths.dev.css.root + '**/*', ['stylus']);
+	gulp.watch(config.paths.dev.views.root + '**/*', ['jade']);
+	gulp.watch(config.paths.dev.images + '**/*', ['images']);
+	gulp.watch(config.paths.dev.fonts + '**/*', ['fonts']);
+	gulp.watch(config.paths.dev.js.root + '**/*', ['scripts']);
+    gulp.watch(config.paths.dev.data + '**/*', ['data']);
+	gulp.watch(config.paths.dev.js.thirdparty + '**/*', ['thirdpartyJs']);
+    gulp.watch(config.paths.dev.css.thirdparty + '**/*', ['thirdpartyCss']);
 });

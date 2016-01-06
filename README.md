@@ -1,2 +1,2 @@
-# jade-template
-Gulp / Jade / Stylus Template for web development
+# Nassacort 2.0
+Training project to generate improved version of Nassacort site

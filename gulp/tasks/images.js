@@ -4,24 +4,19 @@ var gulp = require('gulp'),
 
 
 gulp.task('images', function() {
-    return gulp.src('src/img/**')
+    return gulp.src(config.paths.dev.images + '**/*')
     .pipe(imagemin({
         type: 7,
         progressive: true
     }))
-    .pipe(gulp.dest('./build/img/'));
+    .pipe(gulp.dest(config.paths.prod.images));
 });
 
 
 gulp.task('image-compress', function() {
-    return gulp.src('src/img/**')
+    return gulp.src(config.paths.dev.images + '**/*')
     .pipe(imagemin({
         type: 7
     }))
-    .pipe(gulp.dest('./src/img/'));
-});
-
-
-gulp.task('version', function() {
-    console.log(config.version);
+    .pipe(gulp.dest(config.paths.dev.images));
 });

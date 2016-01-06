@@ -9,6 +9,9 @@ ellipsis(lines)
     height auto
     overflow hidden
     
+
+
+
 /* BRAKEPOINTS  */
 for_breakpoint(breakpoints)
     conditions = ()
@@ -18,6 +21,31 @@ for_breakpoint(breakpoints)
     @media conditions
         {block}
         
+
+
+
+sup(size)
+    sup
+        font-size (size / 2)
+        line-height (size / 2)
+        
+
+
+
+background-linear-gradient(startPoint, startColor, startInterval, endColor, endInterval, deprecatedWebkitStartPoint = false, deprecatedWebkitEndPoint = false)
+    background-color startColor
+    if deprecatedWebkitStartPoint && deprecatedWebkitEndPoint
+        background-image -webkit-gradient(linear, deprecatedWebkitStartPoint, deprecatedWebkitEndPoint, color-stop(startInterval, startColor), color-stop(endInterval, endColor))
+    background-image -webkit-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+    background-image -moz-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+    background-image -ms-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+    background-image -o-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+    background-image linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+        
+
+
+
+
 new_breakpoint(min, max, orient)
     if min && max
         if orient
@@ -40,3 +68,32 @@ new_breakpoint(min, max, orient)
         else 
             @media all and (max-width: max)
                 {block}
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                

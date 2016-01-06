@@ -1,15 +1,16 @@
 var gulp = require('gulp'),
-	browserSync = require('browser-sync');
+	browserSync = require('browser-sync'),
+    config = require('../../config.json');
 
 // Static server
 gulp.task('browser-sync', ['build'], function() {
     browserSync.init({
         server: {
-            baseDir: ['./build', './src']
+            baseDir: [config.paths.prod.path, config.paths.dev.path]
         },
         notify: true,
         files: [
-	      './build/**',
+	      config.paths.prod.path + '**/*',
 	      '!http://localhost:3000/*'
         ]
     });

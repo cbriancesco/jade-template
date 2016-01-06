@@ -1,12 +1,11 @@
 //- -------------- Header ---------------- -//
 //- -------------------------------------- -//
 
-- var pages = [{name: 'Home', url: 'index.html'}, {name: 'Internal', url: 'internal.html'}]
+- var upper = [{name: 'Home', url: '#'}, {name: 'Who we are', url: '#'}, {name: 'Our History', url: '#'}, {name: 'Contact Us', url: '#'}]
 
 header.main__header
-    h1.main__header__title This is a sample template
-
-    ul.main__header__nav
-        - for page in pages
-            li.main__header__nav__item
-                mixin basicLink(page.name, page.url)
+    nav.main__header__holder
+        ul.main__header__nav
+            - for page in upper
+                li.main__header__item
+                    mixin basicLink(page.name, page.url, 'main__header__link')

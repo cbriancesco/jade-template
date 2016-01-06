@@ -9,7 +9,8 @@ block append head
 
 
 block content
+    //- content goes here
+    include ../modules/sample-content
 
-    h2 hello world!
-    
-    mixin basicLink('Click Me', 'http://www.google.com', '_blank')
+block append footer-scripts
+    script(src="js/homepage.js")
